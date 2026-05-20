@@ -4,23 +4,29 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Single-file static website (`index.html`). No build step, no dependencies, no tests. Open the file directly in a browser to preview.
+Two-file static website (`index.html` and `404.html`, nearly identical). No build step, no dependencies, no tests. Open files directly in a browser to preview.
 
-## Working with index.html
+## Working with these files
 
-The file is ~40 KB and 58 lines, but the inline SVG on line 52 is a single minified line containing base64-encoded image data — it will still exceed the context window token limit if read directly.
+Both files are ~40 KB and 58 lines, but each contains a minified inline SVG on a single line that pushes the token count over the context window limit. **Always use `sed` to skip that line.**
 
-**Always use `sed` to work around this:**
+| File | Style block | SVG line | Rest |
+|---|---|---|---|
+| `index.html` | lines 7–48 | line 52 | lines 1–51, 53–58 |
+| `404.html` | lines 7–49 | line 53 | lines 1–52, 54–58 |
 
 ```bash
-# Read everything except the SVG line
+# Read everything except the SVG line (index.html)
 sed -n '1,51p' index.html && sed -n '53,58p' index.html
 
-# Read just the <style> block (lines 7–48)
-sed -n '7,48p' index.html
+# Read everything except the SVG line (404.html)
+sed -n '1,52p' 404.html && sed -n '54,58p' 404.html
+
+# Read just the <style> block
+sed -n '7,48p' index.html   # or 7,49p for 404.html
 ```
 
-The SVG content itself (the artwork) should not need to change. All layout, typography, and spacing work happens in the `<style>` block (lines 7–48).
+The SVG content itself (the artwork) should not need to change. All layout, typography, and spacing work happens in the `<style>` block.
 
 ## Layout
 
