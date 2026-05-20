@@ -8,22 +8,19 @@ Single-file static website (`index.html`). No build step, no dependencies, no te
 
 ## Working with index.html
 
-The file is ~94 KB but only 167 lines. Nearly all of that bulk is an inline SVG containing base64-encoded raster image data and ~100 `<path>` elements. Reading the file directly will exceed the context window token limit.
+The file is ~40 KB and 58 lines, but the inline SVG on line 52 is a single minified line containing base64-encoded image data — it will still exceed the context window token limit if read directly.
 
-**Always use `sed` or `grep` to work around this:**
+**Always use `sed` to work around this:**
 
 ```bash
-# Read only the HTML/CSS skeleton (strips SVG paths and base64 blobs)
-sed -n '49,167p' index.html | grep -v 'data:image\|base64\|<path\|<polygon\|<polyline\|<rect\|<circle\|<ellipse\|<line'
+# Read everything except the SVG line
+sed -n '1,51p' index.html && sed -n '53,58p' index.html
 
-# Read just the <style> block (lines 6–48)
-sed -n '6,48p' index.html
-
-# Find a specific line number first, then read a small window around it
-grep -n 'keyword' index.html
+# Read just the <style> block (lines 7–48)
+sed -n '7,48p' index.html
 ```
 
-The SVG content itself (the artwork) should not need to change. All layout, typography, and spacing work happens in the `<style>` block in the `<head>`.
+The SVG content itself (the artwork) should not need to change. All layout, typography, and spacing work happens in the `<style>` block (lines 7–48).
 
 ## Layout
 
