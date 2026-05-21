@@ -77,6 +77,18 @@
     .details { flex: 1; min-width: 0; }
     .details > h3:first-child { margin-top: 0; }
 
+    .details ul {
+      padding-left: 0;
+    }
+    .details ul li {
+      list-style-type: none;
+    }
+    .details ul li::before {
+      color: #950952;
+      content: "✻";
+      margin-right: 0.5em;
+    }
+
     stripe-buy-button {
       display: block;
       width: 100%;
@@ -160,7 +172,7 @@
               publishable-key="pk_live_51TZIJu2NoHD1G94vhWh8pkOCOuKTLLBn5MxyVVDwZHIPwqFVauFRbuYWbjouJfQkwYtacboon0RgTz3TO3qGzLj200Q5hkRWHu"
             ></stripe-buy-button>
             <div class="description">
-            <p>The classic Name Removed comic <a href="https://nameremoved.com/comics/661/">A Hole In Reality (Is Good For Storage)</a>, which was reillustrated in ink wash as a manual separation for this print.</p>
+            <p>The classic Name Removed comic <a href="https://nameremoved.com/comics/661/">A Hole In Reality (Is Good For Storage)</a>, originally published 27 November 2009, was reillustrated in ink wash as a manual separation for this print.</p>
             <img src="ink-wash.jpg" alt="The ink wash illustration, redrawn as a manual colour separation for the Risograph print.">
             <p>Printed at <a href="https://www.colourcodeprinting.com">Colour Code</a> in Toronto with Orchid and Sunflower inks.</p>
             <p>Ships flat in a cardboard mailer.</p>
