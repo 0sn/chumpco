@@ -42,6 +42,9 @@ main {
   bottom: 0.75rem;
   right: 1rem;
   margin: 0;
+  text-align: right;
+}
+.copyright {
   font-size: 0.65rem;
   color: #63768D;
   letter-spacing: 0.04em;

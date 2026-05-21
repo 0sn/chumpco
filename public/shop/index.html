@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The ChumpCo Shop</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      background: #fff;
+      color: #16161D;
+      font-family: ui-serif, Georgia, "Times New Roman", serif;
+      font-size: clamp(1rem, 1.6vmin + 0.6rem, 1.25rem);
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    a { color: #CCAA00; font-weight: bold; text-decoration-style: wavy; }
+    a:hover { color: #FFD600; }
+
+    header { margin-bottom: 2rem; }
+
+    h1 img {
+      display: inline-block;
+      height: 3em;
+      width: 3em;
+      margin-right: 1em;
+      vertical-align: middle;
+    }
+
+    h1 {
+      margin: 0 0 1.5rem;
+      font-size: clamp(1.4rem, 3vmin + 0.5rem, 2rem);
+      letter-spacing: 0.02em;
+    }
+
+    h2 {
+      margin: 2rem 0 0.75rem;
+      font-size: clamp(1.1rem, 2vmin + 0.4rem, 1.4rem);
+      letter-spacing: 0.02em;
+    }
+
+    h3 { margin: 1.5rem 0 0.25rem; }
+
+    p { margin: 0.5rem 0; }
+
+    article {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    ul.gallery {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    ul.gallery img {
+      display: block;
+      width: 200px;
+      height: auto;
+    }
+
+    .details { flex: 1; min-width: 0; }
+    .details > h3:first-child { margin-top: 0; }
+
+    .description {
+        background: #E6FAFC;
+        padding: 2em;
+        border-radius: 2em;
+        font-size: 1rem;
+    }
+    .description img {
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+        border-radius: 1em;
+    }
+
+    @media (max-width: 520px) {
+      article { flex-direction: column; }
+      ul.gallery img { width: 100%; }
+      .description img { width: 85%; }
+    }
+
+    .stamp {
+      position: fixed;
+      bottom: 0.75rem;
+      right: 1rem;
+      margin: 0;
+      text-align: right;
+    }
+
+    .copyright {
+      font-size: 0.65rem;
+      color: #63768D;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a href="../" class="home-link">Back to the home page.</a>
+    </header>
+    <main>
+      <h1><img src="../logo.svg">The ChumpCo Shop</h1>
+      <section>
+        <h2>Art Prints</h2>
+        <article>
+          <ul class="gallery">
+            <li><img src="overview.jpg" alt="An overhead view of the print, showing the entire page."></li>
+            <li><img src="cave_detail.jpg" alt="A detail shot of the middle of the print, showing a colourful panel where Rabid is using a flashlight in a strange cave."></li>
+            <li><img src="end_detail.jpg" alt="A detail shot of the bottom right corner of the print, showing Rabid emerging in another universe."></li>
+            <li><img src="full-shot.jpg" alt="A full shot of the print at an angle."></li>
+          </ul>
+          <div class="details">
+            <h3>Hole in Reality</h3>
+            <ul>
+                <li>2-colour Risograph</li>
+                <li>11x17</li>
+                <li>Edition of X</li>
+            </ul>
+            <p>Signed and numbered print by Nick Wolfe.</p>
+            <p>TKTK stripe payment buttons</p>
+            <div class="description">
+            <p>The classic Name Removed comic <a href="https://nameremoved.com/comics/661/">A Hole In Reality (Is Good For Storage)</a>, which was reillustrated in ink wash as a manual separation for this print.</p>
+            <img src="ink-wash.jpg">
+            <p>Printed at <a href="http://www.colourcodeprinting.com">Colour Code</a> in Toronto with Orchid and Sunflower inks.</p>
+            <p>Ships rolled.</p>
+
+        </div>
+          </div>
+        </article>
+      </section>
+
+      <!--
+      <section>
+        <h2>Stickers TKTK</h2>
+      </section>
+      <section>
+        <h2>Minicomics TKTK</h2>
+      </section>
+      -->
+
+    </main>
+  </div>
+  <p class="stamp"><span class="copyright">© 2026 Nick Wolfe ¶ 21 May 2026</span></p>
+</body>
+</html>

@@ -4,7 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Static website: `public/index.html`, `public/404.html`, and a shared `public/style.css`. No build step, no dependencies, no tests. Open files directly in a browser to preview. The two pages share structure and base CSS but have distinct color schemes and artwork.
+Static website with no build step, no dependencies, no tests. Pages:
+
+- `public/index.html` — home page (light background)
+- `public/404.html` — 404 page (dark background)
+- `public/shop/index.html` — shop page (self-contained, does not use `style.css`)
+
+`public/index.html` and `public/404.html` share `public/style.css`. Open files directly in a browser to preview.
 
 ## Working with these files
 
@@ -20,6 +26,12 @@ Shared layout, typography, and spacing rules live in `style.css`. Each HTML file
 ## Layout
 
 `body` is a CSS grid with `place-items: center` and `min-height: 100dvh`. The single `<main>` child is a flex column. Responsive sizing uses `clamp()` and `min()` with `vmin` units via CSS custom properties (`--gap`, `--art-size`). The `.art` `<img>` uses explicit `width` and `height: var(--art-size)` (not `height: auto`) to prevent layout jump on load. The 404 page also applies `transform: rotate(180deg)` to `.art`.
+
+## Shop page (`public/shop/`)
+
+Self-contained — all styles in an inline `<style>` block, no dependency on `style.css`.
+
+Stripe payment buttons are not yet implemented; placeholders are marked `TKTK` inside `.details`.
 
 ## Color Scheme
 
