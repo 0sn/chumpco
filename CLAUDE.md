@@ -31,3 +31,7 @@ The SVG content itself (the artwork) should not need to change. All layout, typo
 ## Layout
 
 `body` is a CSS grid with `place-items: center` and `min-height: 100dvh`. The single `<main>` child is a flex column. Responsive sizing uses `clamp()` and `min()` with `vmin` units via CSS custom properties (`--gap`, `--art-size`).
+
+## Color Scheme
+
+Text is in eigengrau, #16161D. Highlights are gold, #FFD600, and links are a darker version #CCAA00. Asides and notes are in slate grey, #63768D. Callout backgrounds are pale misty cyan, #E6FAFC, and anything else fancy can be a lipsticky sort of fruit red #950952.
