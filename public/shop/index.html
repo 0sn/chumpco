@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The ChumpCo Shop</title>
+  <script async src="https://js.stripe.com/v3/buy-button.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
 
@@ -76,6 +77,12 @@
     .details { flex: 1; min-width: 0; }
     .details > h3:first-child { margin-top: 0; }
 
+    stripe-buy-button {
+      display: block;
+      width: 100%;
+      margin: 1rem 0;
+    }
+
     .description {
         background: #E6FAFC;
         padding: 2em;
@@ -134,7 +141,10 @@
                 <li>Edition of X</li>
             </ul>
             <p>Signed and numbered print by Nick Wolfe.</p>
-            <p>TKTK stripe payment buttons</p>
+            <stripe-buy-button
+              buy-button-id="buy_btn_1TZZQS2NoHD1G94vDf8MsJ2q"
+              publishable-key="pk_live_51TZIJu2NoHD1G94vhWh8pkOCOuKTLLBn5MxyVVDwZHIPwqFVauFRbuYWbjouJfQkwYtacboon0RgTz3TO3qGzLj200Q5hkRWHu"
+            ></stripe-buy-button>
             <div class="description">
             <p>The classic Name Removed comic <a href="https://nameremoved.com/comics/661/">A Hole In Reality (Is Good For Storage)</a>, which was reillustrated in ink wash as a manual separation for this print.</p>
             <img src="ink-wash.jpg">
