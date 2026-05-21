@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Two-file static website (`index.html` and `404.html`, nearly identical). No build step, no dependencies, no tests. Open files directly in a browser to preview.
+Two-file static website (`public/index.html` and `public/404.html`, nearly identical). No build step, no dependencies, no tests. Open files directly in a browser to preview.
 
 ## Working with these files
 
@@ -12,18 +12,18 @@ Both files are ~40 KB but each contains a minified inline SVG on a single line t
 
 | File | Style block | SVG line | Rest |
 |---|---|---|---|
-| `index.html` | lines 7–61 | line 65 | lines 1–64, 66–72 |
-| `404.html` | lines 7–64 | line 68 | lines 1–67, 69–74 |
+| `public/index.html` | lines 7–61 | line 65 | lines 1–64, 66–72 |
+| `public/404.html` | lines 7–64 | line 68 | lines 1–67, 69–74 |
 
 ```bash
 # Read everything except the SVG line (index.html)
-sed -n '1,64p' index.html && sed -n '66,72p' index.html
+sed -n '1,64p' public/index.html && sed -n '66,72p' public/index.html
 
 # Read everything except the SVG line (404.html)
-sed -n '1,67p' 404.html && sed -n '69,74p' 404.html
+sed -n '1,67p' public/404.html && sed -n '69,74p' public/404.html
 
 # Read just the <style> block
-sed -n '7,61p' index.html   # or 7,64p for 404.html
+sed -n '7,61p' public/index.html   # or 7,64p for 404.html
 ```
 
 The SVG artwork itself should not need to change. All layout, typography, and spacing work happens in the `<style>` block. Note that the SVG paths have no fill of their own — color is applied via `.art path { fill: … }` in CSS, so path color is part of the theme.
