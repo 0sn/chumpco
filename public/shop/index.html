@@ -98,7 +98,20 @@
 
     @media (max-width: 520px) {
       article { flex-direction: column; }
-      ul.gallery img { width: 100%; }
+      ul.gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      ul.gallery li:first-child {
+        grid-row: 1 / 4;
+        align-self: stretch;
+      }
+      ul.gallery li:first-child img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      ul.gallery li:not(:first-child) img { width: 100%; }
       .description img { width: 85%; }
     }
 
