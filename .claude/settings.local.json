@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -n '1,51p' \"/Users/sn/Documents/N25 Computers and Cyberspace/N25.50 Websites/N25.51 Chumpco.com/20260520 new version/index.html\")",
+      "Bash(sed -n '53,72p' \"/Users/sn/Documents/N25 Computers and Cyberspace/N25.50 Websites/N25.51 Chumpco.com/20260520 new version/index.html\")"
+    ]
+  }
+}

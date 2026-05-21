@@ -8,30 +8,37 @@ Two-file static website (`index.html` and `404.html`, nearly identical). No buil
 
 ## Working with these files
 
-Both files are ~40 KB and 58 lines, but each contains a minified inline SVG on a single line that pushes the token count over the context window limit. **Always use `sed` to skip that line.**
+Both files are ~40 KB but each contains a minified inline SVG on a single line that pushes the token count over the context window limit. **Always use `sed` to skip that line.**
 
 | File | Style block | SVG line | Rest |
 |---|---|---|---|
-| `index.html` | lines 7–48 | line 52 | lines 1–51, 53–58 |
-| `404.html` | lines 7–49 | line 53 | lines 1–52, 54–58 |
+| `index.html` | lines 7–61 | line 65 | lines 1–64, 66–72 |
+| `404.html` | lines 7–64 | line 68 | lines 1–67, 69–74 |
 
 ```bash
 # Read everything except the SVG line (index.html)
-sed -n '1,51p' index.html && sed -n '53,58p' index.html
+sed -n '1,64p' index.html && sed -n '66,72p' index.html
 
 # Read everything except the SVG line (404.html)
-sed -n '1,52p' 404.html && sed -n '54,58p' 404.html
+sed -n '1,67p' 404.html && sed -n '69,74p' 404.html
 
 # Read just the <style> block
-sed -n '7,48p' index.html   # or 7,49p for 404.html
+sed -n '7,61p' index.html   # or 7,64p for 404.html
 ```
 
-The SVG content itself (the artwork) should not need to change. All layout, typography, and spacing work happens in the `<style>` block.
+The SVG artwork itself should not need to change. All layout, typography, and spacing work happens in the `<style>` block. Note that the SVG paths have no fill of their own — color is applied via `.art path { fill: … }` in CSS, so path color is part of the theme.
 
 ## Layout
 
-`body` is a CSS grid with `place-items: center` and `min-height: 100dvh`. The single `<main>` child is a flex column. Responsive sizing uses `clamp()` and `min()` with `vmin` units via CSS custom properties (`--gap`, `--art-size`).
+`body` is a CSS grid with `place-items: center` and `min-height: 100dvh`. The single `<main>` child is a flex column. Responsive sizing uses `clamp()` and `min()` with `vmin` units via CSS custom properties (`--gap`, `--art-size`). The `.art` SVG uses explicit `width` and `height: var(--art-size)` (not `height: auto`) to prevent layout jump on load.
 
 ## Color Scheme
 
-Text is in eigengrau, #16161D. Highlights are gold, #FFD600, and links are a darker version #CCAA00. Asides and notes are in slate grey, #63768D. Callout backgrounds are pale misty cyan, #E6FAFC, and anything else fancy can be a lipsticky sort of fruit red #950952.
+| Role | Color |
+|---|---|
+| Body text & art fill | eigengrau `#16161D` |
+| Highlights | gold `#FFD600` |
+| Links | dark gold `#CCAA00` |
+| Asides / secondary text | slate grey `#63768D` |
+| Callout backgrounds | pale misty cyan `#E6FAFC` |
+| Accent / fancy elements | fruit red `#950952` |
