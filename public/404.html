@@ -4,60 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChumpCo, The Dummy Corporation</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    :root {
-      --gap: clamp(1rem, 3vmin, 2.5rem);
-      --art-size: min(60vmin, 540px);
-    }
-
-    *,
-    *::before,
-    *::after { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      background: #16161D;
-      color: white;
-      font-family: ui-serif, Georgia, "Times New Roman", serif;
-      display: grid;
-      place-items: center;
-      min-height: 100dvh;
-      padding: 2rem;
-    }
-
-    main {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--gap);
-      text-align: center;
-    }
-
-    .art {
-      width: var(--art-size);
-      height: var(--art-size);
-      display: block;
-      transform: rotate(180deg);
-    }
-    .caption {
-      margin: 0;
-      font-size: clamp(1rem, 1.6vmin + 0.6rem, 1.25rem);
-      letter-spacing: 0.02em;
-      line-height: 1.4;
-    }
-    strong {
-      color: gold;
-    }
-
-    .stamp {
-      position: fixed;
-      bottom: 0.75rem;
-      right: 1rem;
-      margin: 0;
-      font-size: 0.65rem;
-      color: #63768D;
-      letter-spacing: 0.04em;
-    }
+    body { background: #16161D; color: white; }
+    .art { transform: rotate(180deg); }
+    strong { color: gold; }
   </style>
 </head>
 <body>
