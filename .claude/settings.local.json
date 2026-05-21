@@ -4,7 +4,9 @@
       "Bash(sed -n '1,51p' \"/Users/sn/Documents/N25 Computers and Cyberspace/N25.50 Websites/N25.51 Chumpco.com/20260520 new version/index.html\")",
       "Bash(sed -n '53,72p' \"/Users/sn/Documents/N25 Computers and Cyberspace/N25.50 Websites/N25.51 Chumpco.com/20260520 new version/index.html\")",
       "Bash(sed -n '1,64p' \"public/index.html\")",
-      "Bash(sed -n '66,72p' \"public/index.html\")"
+      "Bash(sed -n '66,72p' \"public/index.html\")",
+      "Bash(convert --version)",
+      "Bash(python3 -c \"from PIL import Image; print\\('PIL ok'\\)\")"
     ]
   }
 }

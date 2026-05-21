@@ -31,7 +31,7 @@ Shared layout, typography, and spacing rules live in `style.css`. Each HTML file
 
 Self-contained — all styles in an inline `<style>` block, no dependency on `style.css`.
 
-Stripe payment buttons are not yet implemented; placeholders are marked `TKTK` inside `.details`.
+Stripe buy buttons are live. The `publishable-key` and `buy-button-id` attributes on `<stripe-buy-button>` come from the Stripe dashboard.
 
 ### Shop images
 
