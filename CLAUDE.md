@@ -33,6 +33,10 @@ Self-contained — all styles in an inline `<style>` block, no dependency on `st
 
 Stripe payment buttons are not yet implemented; placeholders are marked `TKTK` inside `.details`.
 
+### Shop images
+
+Gallery thumbnails (`overview.jpg`, `cave_detail.jpg`, `end_detail.jpg`, `full-shot.jpg`) are displayed at 200 px wide and stored at 400 px wide (2× Retina). `ink-wash.jpg` is displayed full-width inside a 680 px container and stored at 800 px wide. If replacing images, resize to these dimensions and save at JPEG quality 82 before committing — originals are ~6–8× larger and would add ~1.5 MB of unnecessary weight.
+
 ## Color Scheme
 
 | Role | Color |
